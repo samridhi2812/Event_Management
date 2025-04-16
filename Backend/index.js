@@ -8,8 +8,11 @@ import cors from "cors";
 dotenv.config();
 const app = express();
 
-// Middleware
-app.use(cors());
+// ✅ Use CORS with frontend URL from .env
+app.use(cors({
+  origin: process.env.FRONTEND_URL
+}));
+
 app.use(express.json());
 
 // Env variables
@@ -27,5 +30,5 @@ app.use("/user", userRoute);
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
+  console.log(`🚀 Server listening on port ${PORT}`);
 });

@@ -22,7 +22,7 @@ const from=location.state?.from?.pathname || "/";
       password:data.password,
     }
     //axios use to call api
-    await axios.post("http://https://event-management-n9l6.onrender.com/user/signup",userInfo)
+    await axios.post("http://localhost:4001/user/signup",userInfo)
     .then((res)=>{ //on success it will work
       console.log(res.data)
       if(res.data){

@@ -13,13 +13,13 @@ app.use(cors());
 app.use(express.json());
 
 // Env variables
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4001;
 const URI = process.env.MONGO_URI;
 
 // Connect to MongoDB
 mongoose.connect(URI)
-  .then(() => console.log("Connected to MongoDB Atlas"))
-  .catch((error) => console.error("MongoDB connection error:", error));
+  .then(() => console.log("✅ Connected to MongoDB Atlas"))
+  .catch((error) => console.error("❌ MongoDB connection error:", error));
 
 // Routes
 app.use("/event", eventRoute);

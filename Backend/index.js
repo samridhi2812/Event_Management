@@ -12,6 +12,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+//Root route (health check)
+app.get("/", (req, res) => {
+  res.send(" Event Management Backend is running!");
+});
+
 // Env variables
 const PORT = process.env.PORT || 4001;
 const URI = process.env.MONGO_URI;

@@ -9,7 +9,7 @@ function Findeve() {
   useEffect(() => {
     const getEvent = async () => {
       try {
-        const res = await axios.get('http://localhost:4001/event');
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/event`);
         console.log('Fetched events:', res.data);
         setEvent(res.data);
       } catch (error) {

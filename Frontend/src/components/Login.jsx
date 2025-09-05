@@ -15,8 +15,7 @@ function Login() {
       email: data.email,
       password: data.password,
     };
-    await axios
-      .post(`${process.env.REACT_APP_API_URL}/user/login`, userInfo)
+      await axios.post(`${import.meta.env.VITE_APP_API_URL}/user/login`, userInfo)
       .then((res) => {
         console.log(res.data);
         if (res.data) {

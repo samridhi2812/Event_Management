@@ -22,7 +22,7 @@ const from=location.state?.from?.pathname || "/";
       password:data.password,
     }
     //axios use to call api
-   await axios.post(`${process.env.REACT_APP_API_URL}/user/signup`, userInfo)
+   await axios.post(`${import.meta.env.VITE_APP_API_URL}/user/signup`, userInfo)
     .then((res)=>{ //on success it will work
       console.log(res.data)
       if(res.data){
